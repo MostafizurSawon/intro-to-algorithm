@@ -5,6 +5,26 @@ const int N = 1e3 + 5;
 vector<int> adj[N];
 bool visited[N];
 
+void dfs(int u)
+{
+  // section 1: actions just after entering node u
+  visited[u] = true;
+  for (int v : adj[u])
+  {
+    // section 2: actions before entering a new neighbor
+    if (!visited[v])
+    {
+      // depth[v] = depth[u] + 1;
+      dfs(v);
+      // if (height[v] + 1 > height[u])
+      //   height[u] = height[v] + 1;
+      // height[u] = max(height[u], height[v] + 1);
+    }
+    // section 3: actions after exiting a neighbor
+  }
+  // section 4: actions before exiting node u
+}
+
 void bfs(int s)
 {
   queue<int> q;
@@ -46,28 +66,29 @@ int main()
     adj[v].push_back(u);
   }
 
-  bfs(1);
+  // bfs(1);
+  int cc = 0;
 
   for (int i = 1; i <= n; i++)
   {
-    cout << "Level of " << i << " -> " << level[i] << endl;
+    if (!visited[i])
+    {
+      // dfs(i);
+      bfs(i);
+      cc++;
+    }
   }
+  cout << "No of connected components: " << cc << endl;
 
   return 0;
 }
 
 /*
-12
-11
+7
+5
 1 2
 1 3
-1 10
+2 3
 2 4
-2 5
-3 9
 5 6
-5 7
-7 8
-10 11
-10 12
 */
