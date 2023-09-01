@@ -41,3 +41,31 @@ Index 2: 1 3
 Index 3: 2 4
 Index 4: 3 1
 */
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+//   int n, e;
+//   cin >> n >> e;
+//   vector<int> v[n + 1];
+//   for (int i = 0; i < n; i++)
+//   {
+//     int a, b;
+//     cin >> a >> b;
+//     v[a].push_back(b);
+//     v[b].push_back(a);
+//   }
+
+//   for (int i = 0; i <= n; i++)
+//   {
+//     for (int j = 0; j < v[i].size(); j++)
+//     {
+//       cout << v[i][j] << " ";
+//     }
+//     cout << endl;
+//   }
+
+//   return 0;
+// }

@@ -36,18 +36,19 @@ void bfs(int s)
     // pop a node from the queue and insert unvisited neighbor of that node
     int u = q.front();
     q.pop();
-    cout << "Visiting node: " << u << endl;
+    // cout << "Visiting node: " << u << endl;
     // section 1: A node is being processed
 
     for (int v : adj[u])
     {
       // section 2: child processing
-      if (!visited[v])
-      {
-        q.push(v);
-        visited[v] = true;
-        // section 3: child processing
-      }
+      if (visited[v])
+        continue;
+
+      q.push(v);
+      visited[v] = true;
+      // section 3: child processing
+
       // section 4: same as section 1
     }
   }
@@ -71,12 +72,12 @@ int main()
 
   for (int i = 1; i <= n; i++)
   {
-    if (!visited[i])
-    {
-      // dfs(i);
-      bfs(i);
-      cc++;
-    }
+    if (visited[i])
+      continue;
+
+    // dfs(i);
+    bfs(i);
+    cc++;
   }
   cout << "No of connected components: " << cc << endl;
 
