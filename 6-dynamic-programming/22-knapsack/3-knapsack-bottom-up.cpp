@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
   int n;
   cin >> n;
   int v[n], w[n];
+
   for (int i = 0; i < n; i++)
   {
     cin >> v[i];
@@ -47,5 +49,13 @@ int main()
     }
     cout << endl;
   }
+
   return 0;
 }
+
+/*
+4
+1 5 3 2
+5 2 4 3
+7
+*/

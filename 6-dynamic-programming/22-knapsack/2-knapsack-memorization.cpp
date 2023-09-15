@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int dp[1005][1005];
+
 int knapsack(int n, int s, int v[], int w[])
 {
   // base case
@@ -21,6 +22,7 @@ int knapsack(int n, int s, int v[], int w[])
     return dp[n][s] = knapsack(n - 1, s, v, w);
   }
 }
+
 int main()
 {
   int n;
@@ -44,5 +46,13 @@ int main()
     }
   }
   cout << knapsack(n, s, v, w);
+
   return 0;
 }
+
+/*
+4
+1 5 3 2
+5 2 4 3
+7
+*/
